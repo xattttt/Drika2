@@ -1,0 +1,210 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #eff6ff 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body{
+  background:transparent;
+}
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+    color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;        
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cobre toda a tela sem distorcer */
+    z-index: -1;       /* fica atrás de tudo */
+    filter: brightness(0.6); /* escurece um pouco para dar contraste ao conteúdo */
+}
+
+/* Background elements */
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CSS Butterfly */
+.butterfly {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+}
+
+.wing {
+    position: absolute;
+    width: 18px;
+    height: 25px;
+    border-radius: 50% 10% 50% 10%;
+    transform-origin: bottom center;
+}
+
+.wing-left {
+    left: 2px;
+    background: linear-gradient(45deg, #f472b6, #ec4899, #db2777);
+    animation: flutter-left 2s ease-in-out infinite;
+}
+
+.wing-right {
+    right: 2px;
+    background: linear-gradient(45deg, #a78bfa, #8b5cf6, #7c3aed);
+    animation: flutter-right 2s ease-in-out infinite;
+}
+
+.body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 20px;
+    background: #374151;
+    border-radius: 1px;
+}
+ 
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/* Profile card */
+.profile-card {
+    width: 100%;
+    max-width: 320px;
+    background: transparent;
+    border-radius: 24px;
+    padding: 32px;
+}
+
+ .profile-quote {
+    position: absolute;
+    right: 250px;   /* distância da borda direita */
+    bottom: 400px;  /* altura da frase */
+    max-width: 300px;
+    text-align: right;
+    display: flex;
+    flex-direction: column; /* para o footer ficar abaixo da frase */
+    gap: 10px;              /* espaço entre frase e footer */
+}
+
+.profile-quote p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg, #ffffff, #f5f5f5, #e0e0e0, #f5f5f5, #ffffff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 6s linear infinite;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #898888;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+
+
+ 
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    /* Empty space for future content */
+}
+
+ 
+ 
+
+/* Responsive design */
+@media (min-width: 1024px) {
+    .content-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .profile-card {
+        width: 320px;
+        flex-shrink: 0;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(219, 39, 119, 0.3);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 39, 119, 0.5);
+}
+
+
